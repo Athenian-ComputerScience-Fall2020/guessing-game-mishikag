@@ -26,7 +26,7 @@ try:
         if guess == n:
             break
 except:
-    int(input("please enter a number ")
+    print("please enter a number ")
 
 if guess == n:
     print("yay! you guessed the right number which was" ,guess,)
