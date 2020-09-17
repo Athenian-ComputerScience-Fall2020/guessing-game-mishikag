@@ -13,20 +13,24 @@ chances = 5
 n = random.randint(0,10)
 guess = int(input("enter a number to guess. you have 5 chances "))
 chances-=1
-
-while chances > 0:
-    if n < guess:
-        chances-=1
-        print("your guess",guess,"is too high")
-        guess = int(input("enter a number to guess. "))
-    if n > guess:
-        chances-=1
-        print("your guess",guess,"is too low")
-        guess = int(input("enter a number to guess. "))
-    if guess == n:
-        break
+try: 
+    while chances > 0:
+        if n < guess:
+            chances-=1
+            print("your guess",guess,"is too high")
+            guess = int(input("enter a number to guess. "))
+        if n > guess:
+            chances-=1
+            print("your guess",guess,"is too low")
+            guess = int(input("enter a number to guess. "))
+        if guess == n:
+            break
+except:
+    int(input("please enter a number ")
 
 if guess == n:
     print("yay! you guessed the right number which was" ,guess,)
 if guess != n:
     print("sorry, you ran out of guesses")
+
+    
