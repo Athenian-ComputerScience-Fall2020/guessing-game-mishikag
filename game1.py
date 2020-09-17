@@ -25,9 +25,14 @@ try:
             guess = int(input("enter a number to guess. "))
         if guess == n:
             break
+        if guess == quit:
+            quit = q
+        if str(guess) == q:
+            break
 except:
     print("please enter a number ")
-
+if str(guess)==q:
+    print("okay, you are done playing the game")
 if guess == n:
     print("yay! you guessed the right number which was" ,guess,)
 if guess != n:
