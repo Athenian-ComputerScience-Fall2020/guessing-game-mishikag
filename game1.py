@@ -11,9 +11,9 @@ Use this file to write an "open" version of the game (no test code or defined fo
 import random
 chances = 5
 n = random.randint(0,10)
-print(n)
 guess = int(input("enter a number to guess. you have 5 chances "))
 chances-=1
+
 while chances > 0:
     if n < guess:
         chances-=1
