@@ -9,9 +9,9 @@ collaborators: none
 
 '''
 import random
-def guessing():
+def guessing(chances, guess, n):
     #if chances don't equal 0, the code will run all this below
-            while chances != 0:
+            while chances > 0:
         #if the user inputs a guess that is higher than the number, it will print saying their guess is too high, and then will proceed to having them guess again
                 if n < guess:
                     chances-=1
@@ -72,7 +72,7 @@ while play:
     
     #this part of the code is to ask the user if they want to play again without having to re-run the program
     play_again = input("do you want to play again? enter yes or no ")
-    #if they enter no, play will become false, and the code will not run because on line 13 the while loop must be True for it to run
+    #if they enter no, play will become false, and the code will not run because on line 33 the while loop must be True for it to run
     if play_again == "no":
         play = False
         print("okay you are done playing the guessing game")
