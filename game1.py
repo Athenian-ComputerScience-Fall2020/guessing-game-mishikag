@@ -9,6 +9,7 @@ collaborators: none
 
 '''
 import random
+
 def guessing(chances, guess, n):
     #if chances don't equal 0, the code will run all this below
             while chances > 1:
