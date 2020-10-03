@@ -12,7 +12,7 @@ import random
 
 def guessing(chances, guess, n):
     #if chances don't equal 0, the code will run all this below
-            while chances > 1:
+            while chances >= 1:
         #if the user inputs a guess that is higher than the number, it will print saying their guess is too high, and then will proceed to having them guess again
                 if n < guess:
                     chances-=1
@@ -34,14 +34,14 @@ def guessing(chances, guess, n):
 play = True 
 while play:
     #asks if the user wants to control the range
-    range = input("do you want to control the range of the random number? enter yes or no ")
+    choice_range = input("do you want to control the range of the random number? enter yes or no ")
 
 #if they want to contorl the range, it will ask for the range, and if not the decided range will be 0-10
-    if range == "yes":
+    if choice_range == "yes":
         start_range = int(input("enter the start of your range "))
         end_range = int(input("enter the end of your range "))
         n = random.randint(start_range,end_range)
-    elif range =="no":
+    elif choice_range =="no":
         n = random.randint(0,10)
 
 #this asks the user if they want to chose the number of chances they can have
