@@ -12,24 +12,24 @@ import random
 
 def guessing(chances, guess, n):
     #if chances don't equal 0, the code will run all this below
-            while chances > 1:
+    while chances > 1:
         #if the user inputs a guess that is higher than the number, it will print saying their guess is too high, and then will proceed to having them guess again
-                if n < guess:
-                    chances-=1
-                    print("your guess",guess,"is too high")
-                    guess = int(input("enter a number to guess. "))
+        if n < guess:
+            chances-=1
+            print("your guess",guess,"is too high")
+            guess = int(input("enter a number to guess. "))
         #if the user inputs a guess that is lower than the number, it will print saying their guess is too low, and then will proceed to having them guess again
-                if n > guess:
-                    chances-=1
-                    print("your guess",guess,"is too low")
-                    guess = int(input("enter a number to guess. "))
-        #if the user guesses the correct number, the code will break out of the while loop
-                if guess == n:
-                    break
-        #if the user runs out of guesses the code will break out of the while loop
-                if chances == 1:
-                    break
-                #return(chances, guess)
+        if n > guess:
+            chances-=1
+            print("your guess",guess,"is too low")
+            guess = int(input("enter a number to guess. "))
+#if the user guesses the correct number, the code will break out of the while loop
+        if guess == n:
+            break
+#if the user runs out of guesses the code will break out of the while loop
+        if chances == 1:
+            break
+    return(chances, guess)
 
 #using a boolean we can have the user play the game again without having to rerun the code 
 play = True 
@@ -61,19 +61,17 @@ while play:
     #try is if the user inputs a bad input
     try: 
     #all in a function to call it if the user uses a bad input and the code goes to the except or if they want to play again
-        #result =
-        guessing(chances, guess, n)
-        #chances = result [0]
-        #guess = result[1]
+        result =guessing(chances, guess, n)
+        chances = result[0]
+        guess = result[1]
 
     #if the user inputs a bad input the try and except will run and it will tell the user to enter a number and will continue the guessing game
     except:
         print("please enter a number ")
     #this calls the function guessing to run and to continue running the game
-        #result =
-        guessing(chances, guess, n)
-        #chances = result [0]
-        #guess = result[1]
+        result = guessing(chances, guess, n)
+        chances = result[0]
+        guess = result[1]
 
     #after breaking from the code because the user guessed the correct number, it will print a message saying they guessed the number
     if guess == n:
